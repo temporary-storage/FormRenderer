@@ -5,7 +5,7 @@ var functionListAutocomplete;
 var functionListFullJSON;
 
 /**
- * closure to get hashcode for naming purposes
+ * closure to get code for naming purposes
  * @param str
  * @return {Number}
  */
@@ -68,10 +68,18 @@ function renderTemplate(item){
     // iterating through argument list
     $(item.arguments.argument).each(function(i){
         node = '';
+
         switch (this.containerType) {
 
             case "input":
-                node = this.title+": <input type='text' placeholder='"+this.placeholder+"' class='"+this.rules+"' name='"+this.title+"'  id='"+this.title+"'>\n";
+
+                node = this.title+": <input type='text' placeholder='"+this.placeholder+"' class='"+this.rules+" "+this.class+"' name='"+this.title+"'  id='"+this.title+"'>\n";
+
+
+                var addition_ability = '';
+                if ( this.addition_ability === 'true'){
+                    node += "<input type='button' class='AddInputField' value='Добавить'>";
+                }
                 container +=wrapNode(node);
                 break;
 
@@ -123,13 +131,37 @@ function firePopup(plainHTML,item){
     $("#FunctionDescription").html(item.description);
     $( "#FunctionContainer" ).attr('title',item.title);
     $("#FunctionForm").append(plainHTML);
-    $("#FunctionForm").append('<input type="submit" value="валидировать">');
+    $("#FunctionForm").append('<input type="submit" value="получить функцию">');
     $( "#FunctionContainer" ).dialog({
         minHeight: 500,
         width:800,
         modal: true
+    });
+    $('.AddInputField').live('click',function(e){
+        e.preventDefault();
+        console.log("parent container: ")
+        var parentContainer = $(this).parent();
+
+        $(this).parent().after( $(this).parent().clone() );
+        $(this).parent().find('input[type="button"]').remove();
+    })
+
+    $(function() {
+        $( ".DateInput" ).datepicker( );
+        
+        $( ".DateInputRange" ).daterangepicker({
+            posX: 0,
+            posY: 0,
+            presetRanges: [
+                {text: 'Выберите промежуток', dateStart: 'Today', dateEnd: 'Today+30' }
+            ],
+            presets: {
+                dateRange: 'Date Range'
+            }
+        });
 
     });
+
 
     $("#FunctionForm").validationEngine({
         validationEventTrigger : '' // prevent firing prompt on blur at dailog fire

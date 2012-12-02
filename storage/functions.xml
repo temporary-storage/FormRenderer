@@ -5,13 +5,25 @@
         <arguments>
             <argument>
                 <title>input</title>
-                <type>string</type>
+                <type>string</type><!-- date date-range -->
                 <containerType>input</containerType>
                 <predefinedValues></predefinedValues>
                 <rules>validate[required]</rules>
                 <placeholder>customized string</placeholder>
-                <repopulated>true</repopulated>
+                <addition_ability>true</addition_ability>
+                <class>DateInput</class>
             </argument>
+            <argument>
+                <title>input</title>
+                <type>string</type><!-- date date-range -->
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required]</rules>
+                <placeholder>customized string</placeholder>
+                <addition_ability>true</addition_ability>
+                <class>DateInputRange</class>
+            </argument>
+
             <argument>
                 <title>select</title>
                 <type>string</type>
@@ -19,6 +31,7 @@
                 <predefinedValues>sub_arg1;sub_arg2;sub_arg3</predefinedValues>
                 <rules>validate[required]</rules>
                 <placeholder></placeholder>
+                <class></class>
             </argument>
             <!-- group of checkboxes -->
             <argument>
@@ -28,6 +41,7 @@
                 <predefinedValues>sub_arg1;sub_arg2;sub_arg3</predefinedValues>
                 <rules>validate[required]</rules>
                 <placeholder></placeholder>
+                <class></class>
             </argument>
             <!-- group of radiobuttons-->
             <argument>
@@ -37,6 +51,7 @@
                 <predefinedValues>sub_arg1;sub_arg2;sub_arg3</predefinedValues>
                 <rules>validate[required]</rules>
                 <placeholder></placeholder>
+                <class></class>
             </argument>
             <!-- single radiobutton -->
             <argument>
@@ -46,6 +61,7 @@
                 <predefinedValues>sub_arg1</predefinedValues>
                 <rules>validate[required]</rules>
                 <placeholder></placeholder>
+                <class></class>
             </argument>
             <!-- single checkbox -->
             <!-- group of checkboxes -->
@@ -56,6 +72,7 @@
                 <predefinedValues>sub_arg1</predefinedValues>
                 <rules>validate[required]</rules>
                 <placeholder></placeholder>
+                <class></class>
             </argument>
 
         </arguments>
@@ -72,6 +89,7 @@
                 <predefinedValues></predefinedValues>
                 <rules>validate[required,custom[number],min[0]]</rules>
                 <placeholder>% 00,00</placeholder>
+                <class></class>
             </argument>
         </arguments>
     </item>
@@ -87,6 +105,7 @@
                 <predefinedValues></predefinedValues>
                 <rules>validate[required,custom[number],min[0]]</rules>
                 <placeholder>% 00,00</placeholder>
+                <class></class>
             </argument>
         </arguments>
     </item>
@@ -101,6 +120,7 @@
                 <predefinedValues></predefinedValues>
                 <rules>validate[required,custom[number],min[0]]</rules>
                 <placeholder>% 00,00</placeholder>
+                <class></class>
             </argument>
         </arguments>
     </item>
@@ -119,6 +139,7 @@
                 <predefinedValues></predefinedValues>
                 <rules>validate[required,custom[number],min[0]]</rules>
                 <placeholder>% 00,00</placeholder>
+                <class></class>
             </argument>
             <argument>
                 <title>Name</title>
@@ -127,6 +148,7 @@
                 <predefinedValues></predefinedValues>
                 <rules>validate[required,custom[number],min[0]]</rules>
                 <placeholder>John</placeholder>
+                <class></class>
             </argument>
             <argument>
                 <title>MinStay</title>
@@ -135,6 +157,7 @@
                 <predefinedValues></predefinedValues>
                 <rules>validate[required,custom[number],min[0]]</rules>
                 <placeholder>0-99</placeholder>
+                <class></class>
             </argument>
         </arguments>
     </item>
@@ -193,6 +216,7 @@
                 <predefinedValues></predefinedValues>
                 <rules>validate[required,custom[number],min[0]]</rules>
                 <placeholder>0-0</placeholder>
+                <class></class>
             </argument>
             <argument>
                 <title>Child</title>
@@ -201,6 +225,7 @@
                 <predefinedValues></predefinedValues>
                 <rules>validate[required,custom[number],min[0]]</rules>
                 <placeholder>0-0</placeholder>
+                <class></class>
             </argument>
             <argument>
                 <title>Teen</title>
@@ -209,6 +234,7 @@
                 <predefinedValues></predefinedValues>
                 <rules>validate[required,custom[number],min[0]]</rules>
                 <placeholder>0-0</placeholder>
+                <class></class>
             </argument>
             <argument>
                 <title>Adult</title>
@@ -217,6 +243,7 @@
                 <predefinedValues></predefinedValues>
                 <rules>validate[required,custom[number],min[0]]</rules>
                 <placeholder>0-0</placeholder>
+                <class></class>
             </argument>
         </arguments>
 
@@ -233,6 +260,7 @@
                 <predefinedValues></predefinedValues>
                 <rules></rules>
                 <placeholder></placeholder>
+                <class></class>
             </argument>
             <argument>
                 <title>arg2</title>
@@ -241,6 +269,7 @@
                 <predefinedValues></predefinedValues>
                 <rules></rules>
                 <placeholder></placeholder>
+                <class></class>
             </argument>
             <argument>
                 <title>arg3</title>
@@ -248,7 +277,7 @@
                 <containerType>select</containerType>
                 <predefinedValues>sub_arg1;sub_arg2;sub_arg3</predefinedValues>
                 <rules>required numeric</rules>
-
+                <class></class>
             </argument>
         </arguments>
     </item>
@@ -262,6 +291,7 @@
                 <rules></rules>
                 <containerType>input</containerType>
                 <predefinedValues></predefinedValues>
+                <class></class>
             </argument>
         </arguments>
     </item>
