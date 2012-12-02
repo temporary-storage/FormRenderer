@@ -1,0 +1,268 @@
+<functions>
+    <item>
+        <title>main</title>
+        <description>структура, в которой присутствуют примеры поддерживаемых полей ввода</description>
+        <arguments>
+            <argument>
+                <title>input</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required]</rules>
+                <placeholder>customized string</placeholder>
+                <repopulated>true</repopulated>
+            </argument>
+            <argument>
+                <title>select</title>
+                <type>string</type>
+                <containerType>select</containerType>
+                <predefinedValues>sub_arg1;sub_arg2;sub_arg3</predefinedValues>
+                <rules>validate[required]</rules>
+                <placeholder></placeholder>
+            </argument>
+            <!-- group of checkboxes -->
+            <argument>
+                <title>checkbox</title>
+                <type></type>
+                <containerType>checkbox</containerType>
+                <predefinedValues>sub_arg1;sub_arg2;sub_arg3</predefinedValues>
+                <rules>validate[required]</rules>
+                <placeholder></placeholder>
+            </argument>
+            <!-- group of radiobuttons-->
+            <argument>
+                <title>radio</title>
+                <type></type>
+                <containerType>radio</containerType>
+                <predefinedValues>sub_arg1;sub_arg2;sub_arg3</predefinedValues>
+                <rules>validate[required]</rules>
+                <placeholder></placeholder>
+            </argument>
+            <!-- single radiobutton -->
+            <argument>
+                <title>Single radio button</title>
+                <type></type>
+                <containerType>radio</containerType>
+                <predefinedValues>sub_arg1</predefinedValues>
+                <rules>validate[required]</rules>
+                <placeholder></placeholder>
+            </argument>
+            <!-- single checkbox -->
+            <!-- group of checkboxes -->
+            <argument>
+                <title>Single checkbox</title>
+                <type></type>
+                <containerType>checkbox</containerType>
+                <predefinedValues>sub_arg1</predefinedValues>
+                <rules>validate[required]</rules>
+                <placeholder></placeholder>
+            </argument>
+
+        </arguments>
+    </item>
+
+    <item>
+        <title>Comis</title>
+        <description></description>
+        <arguments>
+            <argument>
+                <title>rate</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required,custom[number],min[0]]</rules>
+                <placeholder>% 00,00</placeholder>
+            </argument>
+        </arguments>
+    </item>
+
+    <item>
+        <title>Addrt</title>
+        <description></description>
+        <arguments>
+            <argument>
+                <title>Superior Villa</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required,custom[number],min[0]]</rules>
+                <placeholder>% 00,00</placeholder>
+            </argument>
+        </arguments>
+    </item>
+    <item>
+        <title>Chrt</title>
+        <description></description>
+        <arguments>
+            <argument>
+                <title>Superior Villa 2</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required,custom[number],min[0]]</rules>
+                <placeholder>% 00,00</placeholder>
+            </argument>
+        </arguments>
+    </item>
+    <item>
+        <title>addperiod</title>
+        <description>
+            можете посмотреть на существующую форму
+            Одно название - текстовое поле (проверка на пробелы до и после)
+            Minimum stay - целое число 0-99
+        </description>
+        <arguments>
+            <argument>
+                <title>ddmmyy_start-ddmmyy_end</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required,custom[number],min[0]]</rules>
+                <placeholder>% 00,00</placeholder>
+            </argument>
+            <argument>
+                <title>Name</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required,custom[number],min[0]]</rules>
+                <placeholder>John</placeholder>
+            </argument>
+            <argument>
+                <title>MinStay</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required,custom[number],min[0]]</rules>
+                <placeholder>0-99</placeholder>
+            </argument>
+        </arguments>
+    </item>
+    <!--
+    Addcs(ddmmyy/pd/oa;Name;pp/pr)
+    Addtax(ddmmyy/pd/oa;Name;pp/pr)
+    Addcsand(ddmmyy;Name;pp/pr)
+    Addcs((ddmmyy/pd/oa;Name;pp/pr)OR(ddmmyy/pd/oa;Name;pp/pr)OR…)
+    Addcs((ddmmyy/pd/oa;Name;pp/pr)AND(ddmmyy/pd/oa;Name;pp/pr)AND…)
+    Addcsor((ddmmyy;Name;pp/pr)OR(ddmmyy;Name;pp/pr))
+    Addsurch(pd/oa;name;pp/pr)
+    Addtaxplus(ddmmyy_start:Name:Rate)
+    Addmeal(Type1;Type2;…)
+    Setratecs(Rate_Age_1;Rate_Age_2;Rate_Age_3;Rate_Age_4;ISO_Currency)
+    Setratecsif(M; Rate_Age_1;Rate_Age_2;Rate_Age_3;Rate_Age_4;ISO_Currency)
+    Setratecsif(R; Rate_Age_1;Rate_Age_2;Rate_Age_3;Rate_Age_4;ISO_Currency)
+    Setratecs(Rate;ISO_Currency)
+    Setratecsif(M; Rate;ISO_Currency)
+    Setratecsif(R; Rate;ISO_Currency)
+    Setrateml(Rate_Age_1;Rate_Age_2;Rate_Age_3;Rate_Age_4;ISO_Currency)
+    Setrateuml(Rate;ISO_Currency)
+    Setrateeb(Rate_Age_1;Rate_Age_2;Rate_Age_3;Rate_Age_4;ISO_Currency)
+    Setraterb(Rate_Age_1;Rate_Age_2;Rate_Age_3;Rate_Age_4;ISO_Currency)
+    Chrateeb(0;25;56;USD)
+    Setstaypay(stay_nights;discount_nights;valid_period;multiplication_possibility_quantity;EB_expanding;Ratecode)
+    Setbn(stay_nights;bonus_nights;Accomodation_period; multiplication_possibility_quantity;EB_expanding,Meal_expanding;Ratecode)
+    Addbird(Terms;Accomodation_period;Discount;Services_expanding;Ratecode)
+    Addbonus(terms; Accomodation_period;bonus_type;Ratecode)
+    Addrestr(restriction)
+    Addcp(Period;No_Show _terms;Other prior to arrival terms)
+    Contr(Transfer_number)
+    Upall(R+15%(10%),EB+15%(10%),M+15%(0%),CS+0%(0%);Ratecode)
+-->
+
+
+
+    <item>
+        <title>setage</title>
+        <description>
+            Поля названия: Infant, Child, Teen, Adult
+            Формат данных: Infant 0 - [2 ],99 - всегда целое число, когда вводятданные в это поле следующие поля должны начинаться с +1
+            Child 3 - [  ].99
+            Teen  3 - [  ].99 и.т.д.
+            то же с полем Child, Teen - по нисходящей
+
+            Взрослый поле нередактируемое - начало - с предыдущего значения и по 100
+            т.е. нам надо создать непрерывную линейко возрастов 0-100 лет в итоге
+
+        </description>
+
+        <arguments>
+            <argument>
+                <title>Infant</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required,custom[number],min[0]]</rules>
+                <placeholder>0-0</placeholder>
+            </argument>
+            <argument>
+                <title>Child</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required,custom[number],min[0]]</rules>
+                <placeholder>0-0</placeholder>
+            </argument>
+            <argument>
+                <title>Teen</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required,custom[number],min[0]]</rules>
+                <placeholder>0-0</placeholder>
+            </argument>
+            <argument>
+                <title>Adult</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules>validate[required,custom[number],min[0]]</rules>
+                <placeholder>0-0</placeholder>
+            </argument>
+        </arguments>
+
+    </item>
+
+    <item>
+        <title>Function1</title>
+        <description>Description for a function with all requirments</description>
+        <arguments>
+            <argument>
+                <title>arg1</title>
+                <type>string</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules></rules>
+                <placeholder></placeholder>
+            </argument>
+            <argument>
+                <title>arg2</title>
+                <type>numeric</type>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+                <rules></rules>
+                <placeholder></placeholder>
+            </argument>
+            <argument>
+                <title>arg3</title>
+                <type>numeric</type>
+                <containerType>select</containerType>
+                <predefinedValues>sub_arg1;sub_arg2;sub_arg3</predefinedValues>
+                <rules>required numeric</rules>
+
+            </argument>
+        </arguments>
+    </item>
+    <item>
+        <title>Function2</title>
+        <description></description>
+        <arguments>
+            <argument>
+                <title>arg1</title>
+                <type></type>
+                <rules></rules>
+                <containerType>input</containerType>
+                <predefinedValues></predefinedValues>
+            </argument>
+        </arguments>
+    </item>
+</functions>
