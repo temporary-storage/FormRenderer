@@ -4,6 +4,7 @@ var functionList //= loadXMLFunctionList();
 var functionListAutocomplete;
 var functionListFullJSON;
 
+var currentAutocompleteSelectedFuncTitle
 /**
  * closure to get code for naming purposes
  * @param str
@@ -35,7 +36,7 @@ function defineAutocomplete(){
         minLength : 3,
         select: function( event, ui ) {
             console.log(ui.item.value);
-
+            currentAutocompleteSelectedFuncTitle = ui.item.value;
             item = getDataByValue(ui.item.value)
             console.log ('final function item '+item);
 
@@ -138,6 +139,7 @@ function firePopup(plainHTML,item){
         modal: true,
         closeOnEscape : false
     });
+    $("#FunctionForm").after("<div id='FunctionResultHolder'></div>")
 
     function initDateInputs() {
 
@@ -195,13 +197,21 @@ function firePopup(plainHTML,item){
         //promptPosition : 'inline'
     });
 
-    var submittedData;
-    $("#FunctionForm").submit(submittedData,function(e){
+    $("#FunctionForm").submit(function(e){
 
         e.preventDefault();
-        console.log(this)
+        var functionArgs = $(this).serializeArray()
+        var argList = currentAutocompleteSelectedFuncTitle;
+        argList += '(';
+        $(functionArgs).each(function(e){
+            console.log(this.name + " "+ this.value);
+            argList += this.value + ";";
+        })
+        argList += ')';
+        $('#FunctionResultHolder').html(argList )
+        /*console.log(this)
         console.log($(this))
-        console.log(submittedData);
+        console.log(submittedData);*/
 
     });
 
