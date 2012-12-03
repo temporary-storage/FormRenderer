@@ -20,7 +20,7 @@
                 <predefinedValues></predefinedValues>
                 <rules>validate[required]</rules>
                 <placeholder>customized string</placeholder>
-                <addition_ability>true</addition_ability>
+                <addition_ability>false</addition_ability>
                 <class>DateInputRange</class>
             </argument>
 
@@ -90,6 +90,7 @@
                 <rules>validate[required,custom[number],min[0]]</rules>
                 <placeholder>% 00,00</placeholder>
                 <class></class>
+                <addition_ability>false</addition_ability>
             </argument>
         </arguments>
     </item>
@@ -258,7 +259,7 @@
                 <type>string</type>
                 <containerType>input</containerType>
                 <predefinedValues></predefinedValues>
-                <rules></rules>
+                <rules>validate[required]</rules>
                 <placeholder></placeholder>
                 <class></class>
             </argument>

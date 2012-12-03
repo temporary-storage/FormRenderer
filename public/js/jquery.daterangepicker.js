@@ -44,11 +44,11 @@ jQuery.fn.daterangepicker = function(settings){
             allDatesAfter: 'All Dates After',
             dateRange: 'Date Range'
         },
-        rangeStartTitle: 'Start date',
-        rangeEndTitle: 'End date',
-        nextLinkText: 'Next',
-        prevLinkText: 'Prev',
-        doneButtonText: 'Done',
+        rangeStartTitle: 'Начальная дата',
+        rangeEndTitle: 'Конечная дата',
+        nextLinkText: 'Дальше',
+        prevLinkText: 'Назад',
+        doneButtonText: 'Готово',
         earliestDate: Date.parse('-15years'), //earliest date allowed
         latestDate: Date.parse('+15years'), //latest date allowed
         rangeSplitter: '-', //string to use between dates in single input

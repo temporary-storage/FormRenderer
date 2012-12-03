@@ -135,38 +135,76 @@ function firePopup(plainHTML,item){
     $( "#FunctionContainer" ).dialog({
         minHeight: 500,
         width:800,
-        modal: true
+        modal: true,
+        closeOnEscape : false
     });
+
+    function initDateInputs() {
+
+            $( ".DateInput" ).datepicker( );
+            if ($( ".DateInputRange").size() > 0 ){
+                $( ".DateInputRange" ).daterangepicker({
+                    presetRanges: [
+                        {text: 'Выберите промежуток', dateStart: 'Today', dateEnd: 'Today+30' }
+                    ],
+                    presets: {
+                        dateRange: 'Календарь'
+                    }
+                })
+            }
+
+    }
+    initDateInputs();
     $('.AddInputField').live('click',function(e){
         e.preventDefault();
         console.log("parent container: ")
         var parentContainer = $(this).parent();
 
-        $(this).parent().after( $(this).parent().clone() );
+        var instanceInput = $(this).parent().clone();
+
+        instanceInput.find('input[type="text"]').val('');
+        instanceInput.find('input[type="text"]').attr('id',hashCode(1+instanceInput.find('input[type="text"]').attr('id')));
+
+        $(this).parent().after( instanceInput );
         $(this).parent().find('input[type="button"]').remove();
+        initDateInputs();
+
     })
 
-    $(function() {
-        $( ".DateInput" ).datepicker( );
-        
-        $( ".DateInputRange" ).daterangepicker({
-            posX: 0,
-            posY: 0,
-            presetRanges: [
-                {text: 'Выберите промежуток', dateStart: 'Today', dateEnd: 'Today+30' }
-            ],
-            presets: {
-                dateRange: 'Date Range'
-            }
-        });
-
-    });
+    /*
+     {
+     posX: 0,
+     posY: 0,
+     presetRanges: [
+     {text: 'Выберите промежуток', dateStart: 'Today', dateEnd: 'Today+30' }
+     ],
+     presets: {
+     dateRange: 'Календарь'
+     }
+     }
+     */
 
 
     $("#FunctionForm").validationEngine({
         validationEventTrigger : '' // prevent firing prompt on blur at dailog fire
+        /*
+        onSuccess : function(form){
+            console.log('form submit success')
+            console.log(form)
+        }*/
         //promptPosition : 'inline'
     });
+
+    var submittedData;
+    $("#FunctionForm").submit(submittedData,function(e){
+
+        e.preventDefault();
+        console.log(this)
+        console.log($(this))
+        console.log(submittedData);
+
+    });
+
 
 
 }
@@ -201,6 +239,14 @@ function parseXml(xml) {
         alert("cannot parse xml string!");
     return dom;
 }
+
+
+$(document).keyup(function(e) {
+    if (e.keyCode ==  27) {
+        $('.ui-daterangepicker').hide();
+    }
+});
+
 
 
 
