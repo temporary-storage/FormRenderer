@@ -213,7 +213,7 @@ function firePopup(plainHTML,item){
         console.log($(this))
         console.log(submittedData);*/
 
-    });
+    })
 
 
 
