@@ -188,7 +188,26 @@ function firePopup(plainHTML,item){
 
 
     $("#FunctionForm").validationEngine({
-        validationEventTrigger : '' // prevent firing prompt on blur at dailog fire
+        validationEventTrigger : '', // prevent firing prompt on blur at dailog fire
+        onValidationComplete: function(form, status){
+            if (status === true)
+            {
+                var functionArgs = $(form).serializeArray()
+                var argList = currentAutocompleteSelectedFuncTitle;
+                argList += '(';
+                $(functionArgs).each(function(index){
+                    console.log(this.name + " "+ this.value);
+                    argList += this.value ;
+                    if (index !== functionArgs.length-1)
+                    {
+                        argList +=  ";"
+                    }
+
+                })
+                argList += ')';
+                $('#FunctionResultHolder').html(argList )
+            }
+        }
         /*
         onSuccess : function(form){
             console.log('form submit success')
@@ -196,7 +215,7 @@ function firePopup(plainHTML,item){
         }*/
         //promptPosition : 'inline'
     });
-
+/*
     $("#FunctionForm").submit(function(e){
 
         e.preventDefault();
@@ -209,12 +228,9 @@ function firePopup(plainHTML,item){
         })
         argList += ')';
         $('#FunctionResultHolder').html(argList )
-        /*console.log(this)
-        console.log($(this))
-        console.log(submittedData);*/
 
     })
-
+*/
 
 
 }

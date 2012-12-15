@@ -26,4 +26,5 @@ interface First{function hi();}
 interface First1{function hi();}
 interface First2 extends First,First1{}
 abstract class mine implements First2{}
+phpinfo();
 
